@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+               function computerPlay() {
+            let choices = ['ROCK', 'PAPER', 'SCISSORS'];
+            let computerRandom = choices[Math.floor(Math.random() * choices.length)];
+            return computerRandom;
+        }
+
+        function userPlay() {
+            let answer = prompt("Take your pick: Rock, Paper, or Scissors?");
+            return answer.toUpperCase();
+        }
+
+        function playRound(userSelection = userPlay(), computerSelection = computerPlay()) {
+
+            if (userSelection == 'ROCK' && computerSelection == 'ROCK') {
+                alert( "It's a tie!" );
+                return 'tie';
+            } else if (userSelection == 'PAPER' && computerSelection == 'PAPER') {
+                alert( "It's a tie!" );
+                return 'tie';
+            } else if (userSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
+                alert( "It's a tie!" );
+                return 'tie';
+            } else if (userSelection == 'PAPER' && computerSelection == 'ROCK') {
+                alert( "You win the round! Paper beats Rock" );
+                return 'win';
+            } else if (userSelection == 'PAPER' && computerSelection == 'SCISSORS') {
+                alert( "You lose the round! Scissors beat Paper" );
+                return 'lose';
+            } else if (userSelection == 'ROCK' && computerSelection == 'PAPER') {
+                alert( "You lose the round! Paper beats Rock" );
+                return 'lose';
+            } else if (userSelection == 'ROCK' && computerSelection == 'SCISSORS') {
+                alert( "You win the round! Rock beats Scissors" );
+                return 'win';
+            } else if (userSelection == 'SCISSORS' && computerSelection == 'PAPER') {
+                alert( "You win the round! Scissors beat Paper" );
+                return 'win';
+            } else if (userSelection == 'SCISSORS' && computerSelection == 'ROCK') {
+                alert( "You lose the round! Rock beats Scissors" );
+                return 'lose';
+            } else {
+                alert( "Wrong weapon!" )
+            }
+        }
+
+        function game() {
+
+            let playerScore = 0;
+            let computerScore = 0;
+            let gameCount = 0; 
+            let roundPlayed; 
+
+            // Round 1
+
+            roundPlayed = playRound(); 
+
+            if (roundPlayed=='win') {
+                playerScore++
+                gameCount++
+                alert (`Keep going! ${playerScore}:${computerScore}`)
+            } else if (roundPlayed=='lose') {
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='tie') {
+                playerScore++
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            }
+
+            // Round 2
+
+            roundPlayed = playRound(); 
+
+            if (roundPlayed=='win') {
+                playerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='lose') {
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='tie') {
+                playerScore++
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            }
+
+            // Round 3
+
+            roundPlayed = playRound(); 
+
+            if (roundPlayed=='win') {
+                playerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='lose') {
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='tie') {
+                playerScore++
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            }
+
+            // Round 4
+
+            roundPlayed = playRound(); 
+
+            if (roundPlayed=='win') {
+                playerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            } else if (roundPlayed=='lose') {
+                computerScore++;
+                gameCount++;
+                alert (`Keep going! ${playerScore}:${computerScore}`);
+            }
+
+            // Round 5
+
+            roundPlayed = playRound(); 
+
+            if (roundPlayed=='win') {
+                playerScore++;
+                gameCount++;
+            } else if (roundPlayed=='lose') {
+                computerScore++;
+                gameCount++;
+            } else if (roundPlayed=='tie') {
+                playerScore++
+                computerScore++;
+                gameCount++;
+            }
+
+            if (playerScore>computerScore) {
+                alert (`You win the battle! ${playerScore}:${computerScore}`);
+            } else if (playerScore<computerScore) {
+                alert (`You lose the battle! ${playerScore}:${computerScore}`);
+            } else if (playerScore=computerScore) {
+                alert (`No one wins! ${playerScore}:${computerScore}`);       
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>hellw</h1>
+    
+</body>
+</html>
