@@ -3,7 +3,8 @@ First JavaScript project
 
 
 
-1. How stop the rounds without showing an error. 
-    retrun end is no good
+1. Update score functuion in a smarter way - nest ifs
+2. Change game over sign to a pop up window
+3. What happens when the game ends?? - popup button to reload? 
 
 
